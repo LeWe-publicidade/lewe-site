@@ -29,3 +29,37 @@ document.querySelectorAll(".project-preview").forEach(btn=>btn.addEventListener(
 document.querySelector(".lightbox-close").addEventListener("click",()=>modal.close());
 modal.addEventListener("click",e=>{if(e.target===modal)modal.close();});
 document.getElementById("year").textContent=new Date().getFullYear();
+
+// Progressive enhancement: all content is visible when JavaScript is disabled.
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+const revealTargets=[...document.querySelectorAll('[data-reveal]')];
+if('IntersectionObserver' in window && !reduceMotion.matches){
+ const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}});
+ },{rootMargin:'0px 0px -45px 0px',threshold:0.06});
+ revealTargets.forEach(el=>observer.observe(el));
+ document.documentElement.classList.add('js-motion');
+} else { revealTargets.forEach(el=>el.classList.add('in-view')); }
+const progress=document.querySelector('#scroll-progress');
+const parallax=document.querySelector('[data-parallax]');
+let framePending=false;
+function updateScroll(){
+ const extent=document.documentElement.scrollHeight-window.innerHeight;
+ const fraction=extent>0?Math.max(0,Math.min(1,window.scrollY/extent)):0;
+ progress.style.transform=`scaleX(${fraction})`;
+ if(parallax && !reduceMotion.matches && window.innerWidth>720){
+  const offset=Math.max(-30,Math.min(30,window.scrollY*0.11));
+  parallax.style.transform=`translate3d(0,${offset}px,0)`;
+ }
+ framePending=false;
+}
+window.addEventListener('scroll',()=>{if(!framePending){framePending=true;requestAnimationFrame(updateScroll);}},{passive:true});
+window.addEventListener('resize',updateScroll,{passive:true});updateScroll();
+// Form relies on an external hosted endpoint: first delivery requires inbox activation.
+const contactForm=document.querySelector('#contact-form');
+if(contactForm){
+ contactForm.addEventListener('submit',()=>{
+  // Native HTML POST intentionally retained for resilience and visible provider response.
+  // No fabricated success message is displayed here.
+ });
+}

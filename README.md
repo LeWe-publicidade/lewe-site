@@ -1,3 +1,25 @@
+# LeWe Soluções — site estático v0.2
+
+Segunda versão com scroll reveal, barra de progresso, ticker em movimento, parallax moderado, filtros, lightbox e formulário de contato.
+
+## Atenção ao formulário
+
+O GitHub Pages não processa formulários no servidor. Esta versão utiliza um **POST nativo para o serviço externo FormSubmit.co**, apontando provisoriamente para `werner.wellington@gmail.com`. **A primeira mensagem exige confirmação de ativação na caixa de entrada**. Sem esse passo e um envio de teste confirmado, o formulário não deve ser tratado como operacional. O formulário envia dados a serviço terceiro; revisar aviso de privacidade e conformidade antes de divulgação pública. Para trocar destinatário, editar o `action` do formulário `id="contact-form"` no `index.html`.
+
+O endereço do email aparece no código público. Para ocultá-lo, usar token de formulário ou outro endpoint configurado pelo usuário.
+
+## Como atualizar no GitHub
+
+Abra `https://github.com/LeWe-publicidade/lewe-site` e substitua os arquivos de mesmo nome (ou use GitHub Desktop / Git). **Não remova** `.github/workflows/static.yml` já instalado no repositório: o ZIP não inclui o workflow, pois contém apenas o site. Assim, o deploy existente continuará funcionando.
+
+## Conteúdo e pendências
+
+Leia `CHECKLIST_PRODUCAO.md` para as tarefas de design e conteúdo. O wordmark, favicon e arte do hero são **provisórios**. O contato é **provisório**. Peças de portfólio representam trabalhos anteriores da direção criativa, não clientes necessariamente contratados pela LeWe. Verifique permissões de divulgação.
+
+## Hospedagem e migração
+
+Arquivos estáticos, caminhos relativos, sem bibliotecas JS ou CDN de terceiros. Pode ser publicado em GitHub Pages ou outra hospedagem estática. O formulário depende de terceiro até que seja substituído por um backend próprio.
+
 # LeWe Soluções — site estático (MVP 01)
 
 Vitrine comercial inicial em **HTML5 + CSS3 + JavaScript puro**. Sem frameworks, backend, banco de dados ou dependências externas.
