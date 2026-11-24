@@ -2069,12 +2069,11 @@ h2 em {
 
 .aside-emblem {
   position: relative;
-  width: clamp(110px, 13vw, 165px);
+  width: clamp(176px, 20.8vw, 264px);
   aspect-ratio: 1 / 1;
   margin-top: 42px;
   isolation: isolate;
 }
-
 /* Todos os desenhos ocupam exatamente a mesma área */
 .aside-emblem .emblem-layer {
   position: absolute;
@@ -2145,7 +2144,7 @@ h2 em {
 /* Celulares */
 @media (max-width: 720px) {
   .aside-emblem {
-    width: 90px;
+    width: 144px;
     margin-top: 18px;
   }
 }
