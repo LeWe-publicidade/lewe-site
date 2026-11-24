@@ -133,26 +133,50 @@
       </g>
 
       <!-- Etapa 1: Ideia -->
-      <g class="emblem-stage stage-cloud"
-         fill="none" stroke="#173D2B"
-         stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      
+<svg class="emblem-layer emblem-cloud" viewBox="0 0 180 180" aria-hidden="true">
 
-        <path d="M58 105
-          C47 105 42 97 42 88
-          C42 78 50 71 60 71
-          C63 57 75 49 89 51
-          C101 52 109 60 112 71
-          C125 68 138 77 138 90
-          C138 100 130 106 119 106 Z"/>
+  <!-- Nuvem -->
+  <path
+    d="M48 119
+       C34 119 27 109 27 96
+       C27 82 38 72 52 73
+       C56 54 72 43 91 45
+       C108 46 121 58 124 74
+       C140 70 153 81 153 96
+       C153 109 143 119 130 119 Z"
+    fill="none"
+    stroke="#173D2B"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 
-        <path d="M90 72 V91 M81 82 L90 91 L99 82"/>
+  <!-- Lâmpada central -->
+  <g
+    fill="none"
+    stroke="#A8D64B"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M90 66
+             C78 66 70 75 70 87
+             C70 95 75 101 80 106
+             L80 113
+             H100
+             V106
+             C105 101 110 95 110 87
+             C110 75 102 66 90 66 Z"/>
 
-        <g class="idea-lights" stroke="#A8D64B">
-          <path d="M50 51 L50 43 M46 47 L54 47"/>
-          <path d="M130 54 L130 46 M126 50 L134 50"/>
-          <circle cx="90" cy="35" r="4"/>
-        </g>
-      </g>
+    <path d="M81 119 H99 M83 125 H97"/>
+    <path d="M90 54 V47 M68 61 L63 56 M112 61 L117 56"/>
+  </g>
+
+  <!-- Brilho da ideia -->
+  <circle cx="90" cy="87" r="4" fill="#A8D64B"/>
+</svg>
+
 
       <!-- Etapa 2: Conexão -->
       <g class="emblem-stage stage-wifi"
