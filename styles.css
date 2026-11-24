@@ -2061,3 +2061,172 @@ h2 em {
     transform: none;
   }
 }
+
+/* EMBLEMA ANIMADO LEWE - 01 / A LEWE */
+
+.aside-emblem {
+  width: clamp(100px, 12vw, 155px);
+  aspect-ratio: 1;
+  margin-top: 38px;
+  color: #173D2B;
+  overflow: visible;
+}
+
+.aside-emblem svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.emblem-network {
+  opacity: .75;
+}
+
+.emblem-node {
+  animation: node-light 2.4s ease-in-out infinite;
+}
+
+.node-b { animation-delay: .6s; }
+.node-c { animation-delay: 1.2s; }
+.node-d { animation-delay: 1.8s; }
+
+.emblem-stage {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.stage-cloud {
+  animation-name: stage-cloud-cycle;
+}
+
+.stage-wifi {
+  animation-name: stage-wifi-cycle;
+}
+
+.stage-people {
+  animation-name: stage-people-cycle;
+}
+
+.idea-lights {
+  animation: idea-ignition 2s ease-in-out infinite;
+}
+
+.signal-line {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: signal-flow 2.5s linear infinite;
+}
+
+.person {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: person-arrive 2.5s ease-in-out infinite;
+}
+
+.person-two { animation-delay: .3s; }
+.person-three { animation-delay: .6s; }
+
+@keyframes stage-cloud-cycle {
+  0%, 27% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33%, 94% {
+    opacity: 0;
+    transform: scale(.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes stage-wifi-cycle {
+  0%, 29% {
+    opacity: 0;
+    transform: scale(.75);
+  }
+  36%, 59% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  66%, 100% {
+    opacity: 0;
+    transform: scale(.75);
+  }
+}
+
+@keyframes stage-people-cycle {
+  0%, 61% {
+    opacity: 0;
+    transform: scale(.75);
+  }
+  69%, 91% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  98%, 100% {
+    opacity: 0;
+    transform: scale(.75);
+  }
+}
+
+@keyframes node-light {
+  0%, 100% {
+    opacity: .25;
+    fill: transparent;
+  }
+  50% {
+    opacity: 1;
+    fill: #A8D64B;
+  }
+}
+
+@keyframes idea-ignition {
+  0%, 100% { opacity: .35; }
+  50% { opacity: 1; }
+}
+
+@keyframes signal-flow {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes person-arrive {
+  0%, 100% {
+    opacity: .5;
+    transform: translateY(3px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Redução proporcional em telas menores */
+@media (max-width: 720px) {
+  .aside-emblem {
+    width: 88px;
+    margin-top: 18px;
+  }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .aside-emblem *,
+  .aside-emblem *::before {
+    animation: none !important;
+  }
+
+  .stage-cloud {
+    opacity: 1;
+  }
+
+  .stage-wifi,
+  .stage-people {
+    opacity: 0;
+  }
+}
