@@ -110,63 +110,7 @@
 <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="emblem-title">
   <title id="emblem-title">Ideia, conexão e pessoas</title>
 
-  <style>
-    /* Rede externa permanece visível durante toda a animação */
-    .emblem-network {
-      animation: network-pulse 4s ease-in-out infinite;
-    }
-
-    /* Cada etapa ocupa seu próprio intervalo, sem sobreposição */
-    .emblem-cloud {
-      opacity: 1;
-      animation: show-cloud 12s infinite;
-    }
-
-    .emblem-wifi {
-      opacity: 0;
-      animation: show-wifi 12s infinite;
-    }
-
-    .emblem-people {
-      opacity: 0;
-      animation: show-people 12s infinite;
-    }
-
-    @keyframes show-cloud {
-      0%, 29% { opacity: 1; }
-      33%, 100% { opacity: 0; }
-    }
-
-    @keyframes show-wifi {
-      0%, 32% { opacity: 0; }
-      36%, 62% { opacity: 1; }
-      66%, 100% { opacity: 0; }
-    }
-
-    @keyframes show-people {
-      0%, 65% { opacity: 0; }
-      69%, 95% { opacity: 1; }
-      99%, 100% { opacity: 0; }
-    }
-
-    @keyframes network-pulse {
-      0%, 100% { opacity: .55; }
-      50% { opacity: 1; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .emblem-network,
-      .emblem-cloud,
-      .emblem-wifi,
-      .emblem-people {
-        animation: none;
-      }
-
-      .emblem-cloud { opacity: 1; }
-      .emblem-wifi,
-      .emblem-people { opacity: 0; }
-    }
-  </style>
+  
 
   <!-- Rede externa permanente -->
   <g class="emblem-network"
